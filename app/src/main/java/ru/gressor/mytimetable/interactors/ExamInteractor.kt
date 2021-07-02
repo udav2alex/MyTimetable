@@ -4,6 +4,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import ru.gressor.mytimetable.entities.TimerState
 import ru.gressor.mytimetable.repositories.ExamsRepository
+import java.text.DecimalFormat
 
 class ExamInteractor(
     private val examsRepository: ExamsRepository
@@ -31,12 +32,16 @@ class ExamInteractor(
         val minutes = seconds / 60
         seconds -= minutes * 60
 
+        val df = DecimalFormat("00")
+
         return if (days == 0L) {
-            "$hours : $minutes : $seconds" to true
+            "${hours.f(df)} : ${minutes.f(df)} : ${seconds.f(df)}" to true
         } else {
-            "$days : $hours : $minutes" to false
+            "${days.f(df)} : ${hours.f(df)} : ${minutes.f(df)}" to false
         }
     }
+
+    private fun Long.f(formatter: DecimalFormat): String = formatter.format(this)
 
     companion object {
         private const val SECOND_DELAY = 1000L
