@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/gap_big"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="36dp"
         android:text="@string/hi_user"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,7 @@
             android:id="@+id/text_card_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="@string/are_you_ready_for_exams"
             android:textSize="24sp" />
@@ -51,10 +51,20 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="8dp"
             android:gravity="center"
             android:text="@string/days_hours_minutes"
-            android:textSize="16sp" />
+            android:textSize="16sp">
+
+            <tag
+                android:id="@+id/days_hours_minutes"
+                android:value="@string/days_hours_minutes" />
+
+            <tag
+                android:id="@+id/hours_minutes_seconds"
+                android:value="@string/hours_minutes_seconds" />
+
+        </TextView>
 
     </androidx.cardview.widget.CardView>
 
@@ -91,9 +101,9 @@
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="@dimen/gap_big"
-        tools:listitem="@layout/item_classes"
         app:layout_constraintBottom_toTopOf="@id/second_block_bottom_guideline"
-        app:layout_constraintTop_toBottomOf="@id/classes_caption" />
+        app:layout_constraintTop_toBottomOf="@id/classes_caption"
+        tools:listitem="@layout/item_classes" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/second_block_bottom_guideline"

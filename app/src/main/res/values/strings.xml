@@ -5,6 +5,7 @@
     <string name="hi_user">Hi, Aleksey!</string>
     <string name="are_you_ready_for_exams">Are you ready for exams?</string>
     <string name="days_hours_minutes">days : hours : minutes</string>
+    <string name="hours_minutes_seconds">hours : minutes : seconds</string>
     <string name="homework">Homework</string>
     <string name="class_image">Class image</string>
 </resources>

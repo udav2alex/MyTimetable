@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import ru.gressor.mytimetable.R
 import ru.gressor.mytimetable.databinding.FragmentHomeBinding
 import ru.gressor.mytimetable.repositories.ExamsRepositoryStub
 import ru.gressor.mytimetable.vm.HomeViewModel
@@ -32,7 +33,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 .examStateFlow
                 .flowWithLifecycle(lifecycle, Lifecycle.State.STARTED)
                 .collect {
-                    binding.timerTextView.text = it.second
+                    binding.timerTextView.text = it.timerString
+
+                    binding.captionsCardView.text = if (it.showSeconds) {
+                        binding.captionsCardView.getTag(R.id.hours_minutes_seconds) as String
+                    } else {
+                        binding.captionsCardView.getTag(R.id.days_hours_minutes) as String
+                    }
                 }
         }
     }
