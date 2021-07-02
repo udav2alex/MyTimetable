@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/greetings_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/gap_big"
+        android:layout_marginTop="48dp"
+        android:text="@string/hi_user"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/gap_big"
+        android:elevation="8dp"
+        app:cardBackgroundColor="?colorSecondaryVariant"
+        app:layout_constraintBottom_toTopOf="@id/first_block_bottom_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/greetings_text_view">
+
+        <TextView
+            android:id="@+id/text_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/are_you_ready_for_exams"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/timer_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="48sp"
+            tools:text="09 : 12 : 34" />
+
+        <TextView
+            android:id="@+id/captions_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="@string/days_hours_minutes"
+            android:textSize="16sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/first_block_bottom_guideline"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.38" />
+
+    <TextView
+        android:id="@+id/classes_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/gap_big"
+        android:text="@string/classes"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/first_block_bottom_guideline" />
+
+    <TextView
+        android:id="@+id/classes_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/gap_big"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/first_block_bottom_guideline"
+        tools:text="6 classes today" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/classes_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="@dimen/gap_big"
+        tools:listitem="@layout/item_classes"
+        app:layout_constraintBottom_toTopOf="@id/second_block_bottom_guideline"
+        app:layout_constraintTop_toBottomOf="@id/classes_caption" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/second_block_bottom_guideline"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.62" />
+
+    <TextView
+        android:id="@+id/homework_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/gap_big"
+        android:text="@string/homework"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/second_block_bottom_guideline" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/homework_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="@dimen/gap_big"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homework_caption" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

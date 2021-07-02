@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">My Timetable</string>
+    <string name="home">Home</string>
+    <string name="classes">Classes</string>
+    <string name="hi_user">Hi, Aleksey!</string>
+    <string name="are_you_ready_for_exams">Are you ready for exams?</string>
+    <string name="days_hours_minutes">days : hours : minutes</string>
+    <string name="homework">Homework</string>
+    <string name="class_image">Class image</string>
 </resources>

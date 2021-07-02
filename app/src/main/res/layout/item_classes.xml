@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_height="140dp">
+
+    <ImageView
+        android:id="@+id/class_image_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="38dp"
+        android:contentDescription="@string/class_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@android:drawable/ic_dialog_alert" />
+
+    <TextView
+        android:id="@+id/class_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/gap_big"
+        app:layout_constraintBottom_toTopOf="@+id/class_timepiece"
+        app:layout_constraintStart_toEndOf="@id/class_image_view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="History" />
+
+    <TextView
+        android:id="@+id/class_timepiece"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:layout_marginTop="@dimen/gap_standard"
+        android:layout_marginStart="@dimen/gap_big"
+        app:drawableStartCompat="@android:drawable/ic_lock_idle_alarm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/class_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/class_caption"
+        tools:text="8-00 - 8:45" />
+
+    <ImageButton
+        android:id="@+id/call_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="38dp"
+        android:contentDescription="@string/class_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@android:drawable/ic_btn_speak_now" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

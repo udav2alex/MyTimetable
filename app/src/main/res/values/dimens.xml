@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="gap_standard">16dp</dimen>
+    <dimen name="gap_big">24dp</dimen>
+    <dimen name="tabs_text_size">24sp</dimen>
+</resources>
