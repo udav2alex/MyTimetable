@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/class_timepiece"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/gap_standard"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="8-00 - 8:45" />
+
+    <View
+        android:id="@+id/background_view"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginTop="@dimen/gap_standard"
+        android:background="@color/teal_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/class_timepiece" />
+
+    <ImageView
+        android:id="@+id/class_image_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="38dp"
+        android:contentDescription="@string/class_image"
+        app:layout_constraintBottom_toBottomOf="@id/background_view"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@id/background_view"
+        app:layout_constraintTop_toTopOf="@id/background_view"
+        tools:src="@android:drawable/ic_dialog_alert" />
+
+    <TextView
+        android:id="@+id/class_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/gap_big"
+        app:layout_constraintBottom_toTopOf="@id/class_teacher"
+        app:layout_constraintStart_toEndOf="@id/class_image_view"
+        app:layout_constraintTop_toTopOf="@id/background_view"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="History" />
+
+    <TextView
+        android:id="@+id/class_teacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/gap_big"
+        android:layout_marginTop="@dimen/gap_standard"
+        android:drawablePadding="8dp"
+        app:drawableStartCompat="@android:drawable/ic_lock_idle_alarm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/class_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/class_caption"
+        tools:text="Teacher: Mrs. Thomas" />
+
+    <ImageButton
+        android:id="@+id/call_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="38dp"
+        android:contentDescription="@string/class_image"
+        app:layout_constraintBottom_toBottomOf="@id/background_view"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/background_view"
+        app:layout_constraintTop_toTopOf="@id/background_view"
+        tools:src="@android:drawable/ic_btn_speak_now" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

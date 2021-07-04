@@ -103,7 +103,7 @@
         android:layout_marginBottom="@dimen/gap_big"
         app:layout_constraintBottom_toTopOf="@id/second_block_bottom_guideline"
         app:layout_constraintTop_toBottomOf="@id/classes_caption"
-        tools:listitem="@layout/item_classes" />
+        tools:listitem="@layout/item_home_class" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/second_block_bottom_guideline"
