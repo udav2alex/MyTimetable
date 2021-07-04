@@ -1,12 +1,15 @@
 package ru.gressor.mytimetable
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ru.gressor.mytimetable.databinding.ActivityMainBinding
-import ru.gressor.mytimetable.ui.ClassesFragment
-import ru.gressor.mytimetable.ui.HomeFragment
+import ru.gressor.mytimetable.ui.classes.ClassesFragment
+import ru.gressor.mytimetable.ui.home.HomeFragment
+import ru.gressor.mytimetable.utils.SkypeLinkListener
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), SkypeLinkListener {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, ClassesFragment())
+                    .addToBackStack(null)
                     .commit()
             }
         }
@@ -40,11 +44,14 @@ class MainActivity : AppCompatActivity() {
                 val old = binding.tabHome.currentTextColor
                 binding.tabHome.setTextColor(binding.tabClasses.currentTextColor)
                 binding.tabClasses.setTextColor(old)
-
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, HomeFragment())
-                    .commit()
+                onBackPressed()
             }
         }
+    }
+
+    override fun startSkypeLink(link: String) {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(link)
+        startActivity(intent)
     }
 }

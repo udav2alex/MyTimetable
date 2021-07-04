@@ -1,4 +1,4 @@
-package ru.gressor.mytimetable.ui
+package ru.gressor.mytimetable.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,6 +14,7 @@ import kotlinx.coroutines.launch
 import ru.gressor.mytimetable.R
 import ru.gressor.mytimetable.databinding.FragmentHomeBinding
 import ru.gressor.mytimetable.repositories.ExamsRepositoryStub
+import ru.gressor.mytimetable.ui.BaseFragment
 import ru.gressor.mytimetable.vm.HomeViewModel
 import ru.gressor.mytimetable.vm.HomeViewModelFactory
 
@@ -34,12 +35,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 .flowWithLifecycle(lifecycle, Lifecycle.State.STARTED)
                 .collect {
                     binding.timerTextView.text = it.timerString
-
-                    binding.captionsCardView.text = if (it.showSeconds) {
-                        binding.captionsCardView.getTag(R.id.hours_minutes_seconds) as String
-                    } else {
-                        binding.captionsCardView.getTag(R.id.days_hours_minutes) as String
-                    }
+                    binding.captionsCardView.text =
+                        if (it.showSeconds) {
+                            binding.captionsCardView.getTag(R.id.hours_minutes_seconds) as String
+                        } else {
+                            binding.captionsCardView.getTag(R.id.days_hours_minutes) as String
+                        }
                 }
         }
     }

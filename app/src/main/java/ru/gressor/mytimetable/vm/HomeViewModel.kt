@@ -10,7 +10,7 @@ import ru.gressor.mytimetable.interactors.ExamInteractor
 import ru.gressor.mytimetable.repositories.ExamsRepository
 
 class HomeViewModel(
-    private val examsRepository: ExamsRepository
+    examsRepository: ExamsRepository
 ) : ViewModel() {
     private val examInteractor = ExamInteractor(examsRepository)
 
